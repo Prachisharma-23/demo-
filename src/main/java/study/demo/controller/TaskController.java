@@ -17,34 +17,30 @@ import study.demo.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/api/tasks")
-@CrossOrigin(origins = "http://localhost:3000") // allow React frontend
+@CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
     private final TaskRepository repo;
-
-    public TaskController(TaskRepository repo) {
-        this.repo = repo;
-    }
+    public TaskController(TaskRepository repo) { this.repo = repo; }
 
     @GetMapping
-    public List<Task> getAllTasks() {
-        return repo.findAll();
-    }
+    public List<Task> getAll() { return repo.findAll(); }
 
     @PostMapping
-    public Task addTask(@RequestBody Task task) {
-        task.setCompleted(false); // new task always starts incomplete
+    public Task add(@RequestBody Task task) {
+        task.setCompleted(false);
         return repo.save(task);
     }
 
     @PutMapping("/{id}/complete")
-    public Task markTaskComplete(@PathVariable Long id) {
+    public Task markComplete(@PathVariable Long id) {
         Task task = repo.findById(id).orElseThrow();
         task.setCompleted(true);
         return repo.save(task);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable Long id) {
+    public void delete(@PathVariable Long id) {
         repo.deleteById(id);
     }
 }
+

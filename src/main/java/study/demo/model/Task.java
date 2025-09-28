@@ -1,5 +1,5 @@
 // model/Task.java
-package com.example.taskmanager.model;
+package study.demo.model;
 
 import java.time.LocalDate;
 
