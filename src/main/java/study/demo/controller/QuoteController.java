@@ -32,4 +32,3 @@ public class QuoteController {
         return all.get(random.nextInt(all.size()));
     }
 }
-

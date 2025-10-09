@@ -16,6 +16,7 @@ public class Timer {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private Long duration; // in seconds
+    private String type; // "work" or "break"
 
     public Timer() {}
 
@@ -36,6 +37,9 @@ public class Timer {
 
     public Long getDuration() { return duration; }
     public void setDuration(Long duration) { this.duration = duration; }
+
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 }
 
 
