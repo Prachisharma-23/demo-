@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Timer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,30 +17,61 @@ public class Timer {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private Long duration; // in seconds
-    private String type; // "work" or "break"
+    private String type;   // "work" or "break"
+    private String username; // associated user's username
 
     public Timer() {}
 
-    public Timer(LocalDateTime startTime, LocalDateTime endTime, Long duration) {
+    public Timer(LocalDateTime startTime, LocalDateTime endTime, Long duration, String type, String username) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.duration = duration;
+        this.type = type;
+        this.username = username;
     }
 
     // Getters & Setters
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public LocalDateTime getStartTime() { return startTime; }
-    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
 
-    public LocalDateTime getEndTime() { return endTime; }
-    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
 
-    public Long getDuration() { return duration; }
-    public void setDuration(Long duration) { this.duration = duration; }
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
 
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
-
-

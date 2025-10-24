@@ -19,6 +19,14 @@ public class Task {
     private LocalDate deadline;
     private String priority;
     private boolean completed;  // 👈 matches frontend "task.completed"
+    private String username; // 👈 new field for usernam
+    
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     // Getters and Setters
     public Long getId() { return id; }

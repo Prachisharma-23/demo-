@@ -2,6 +2,7 @@ package study.demo.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +20,17 @@ import study.demo.repository.TaskRepository;
 @RequestMapping("/api/tasks")
 @CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
+    @Autowired
+     private TaskRepository taskRepository;
+
     private final TaskRepository repo;
     public TaskController(TaskRepository repo) { this.repo = repo; }
 
-    @GetMapping
-    public List<Task> getAll() { return repo.findAll(); }
+    @GetMapping("/{username}")
+    public List<Task> getTasksByUser(@PathVariable String username) {
+      return taskRepository.findByUsername(username);
+    }
+
 
     @PostMapping
     public Task add(@RequestBody Task task) {
