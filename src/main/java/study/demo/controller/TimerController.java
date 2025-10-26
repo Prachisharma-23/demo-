@@ -17,7 +17,7 @@ import study.demo.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/timer")
-@CrossOrigin(origins = "http://localhost:3000") // React app
+@CrossOrigin(origins = "https://study-planner-xi-lovat.vercel.app") // React app
 public class TimerController {
 
     private final TimerRepository timerRepository;
