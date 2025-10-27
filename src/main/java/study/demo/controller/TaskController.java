@@ -18,7 +18,7 @@ import study.demo.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/api/tasks")
-@CrossOrigin(origins = "https://study-planner-xi-lovat.vercel.app")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
     @Autowired
      private TaskRepository taskRepository;

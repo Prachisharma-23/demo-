@@ -11,7 +11,7 @@ import study.demo.model.Quote;
 import study.demo.repository.QuoteRepository; 
       @RestController 
       @RequestMapping("/api/quotes") 
-      @CrossOrigin(origins = "https://study-planner-xi-lovat.vercel.app") 
+      @CrossOrigin(origins = "http://localhost:3000") 
       public class QuoteController { 
         private final QuoteRepository repo; 
         private final Random random = new Random(); 
