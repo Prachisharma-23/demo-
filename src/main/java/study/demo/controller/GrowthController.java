@@ -17,7 +17,8 @@ import study.demo.repository.TimerRepository;
 
 @RestController
 @RequestMapping("/api/growth")
-@CrossOrigin(origins = "http://localhost:3000") 
+@CrossOrigin(origins ="https://study-planner-xi-lovat.vercel.app/") 
+
 public class GrowthController {
 
     @Autowired

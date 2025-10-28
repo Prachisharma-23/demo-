@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import study.demo.model.User;
 import study.demo.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://study-planner-xi-lovat.vercel.app/")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
